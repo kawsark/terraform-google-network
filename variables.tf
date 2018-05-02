@@ -1,6 +1,11 @@
 variable "name" {
   type        = "string"
-  description = "Network name a create on GCP"
+  description = "Name of the network"
+}
+
+variable "description" {
+  type        = "string"
+  description = "Description for the network"
 }
 
 variable "auto_create_subnetworks" {
