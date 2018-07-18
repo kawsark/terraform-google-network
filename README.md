@@ -1,22 +1,21 @@
-### Network Google Cloud Platform 
+### Network Google Cloud Platform
 
-Manages a network within GCE
+Module to manage a network in GCP with ability to specify an IP range
 
 ##### Example (minimum)
+See examples directory for more information:
+- [Minimum example](examples/example-min/README.md)
+- [Example with 2 networks](examples/example-iprange/README.md)
 
-```hcl
-module "network" {
-  source = "tasdikrahman/network/google"
-  name   = "${var.name}"
-}
-```
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| network_name | Network name to create on GCP | string | - | yes |
+| network_description | Network description | string | GCP network provisioned by terraform | no |
+| ipv4_range | IPV4 range to create on GCP | string | 192.168.0.0/21 | no |
 | auto_create_subnetworks | Auto-creation of the associated subnet | string | `false` | no |
-| name | Network name to create on GCP | string | - | yes |
 
 ## Outputs
 
@@ -26,7 +25,7 @@ module "network" {
 | name | The unique name of the network |
 | self_link | The URL of the created resource |
 
-#### Docs 
+#### Docs
 
 - https://cloud.google.com/compute/docs/vpc
 - https://www.terraform.io/docs/providers/google/r/compute_network.html

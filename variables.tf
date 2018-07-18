@@ -1,12 +1,18 @@
-variable "name" {
+variable "gcp_network_name" {
   type        = "string"
-  description = "Name of the network"
+  description = "Network name"
 }
 
 variable "description" {
   type        = "string"
   description = "Description for the network"
-  default     = "a network"
+  default     = "GCP network provisioned by terraform"
+}
+
+variable "ipv4_range" {
+  type        = "string"
+  default     = "192.168.0.0/21"
+  description = "An IP V4 range"
 }
 
 variable "auto_create_subnetworks" {

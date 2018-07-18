@@ -1,5 +1,6 @@
-resource "google_compute_network" "your_network" {
-  name                    = "${var.name}"
+resource "google_compute_network" "my_network" {
+  name                    = "${var.gcp_network_name}"
   auto_create_subnetworks = "${var.auto_create_subnetworks}"
   description             = "${var.description}"
+  ipv4_range 		  = "${var.ipv4_range}"
 }
