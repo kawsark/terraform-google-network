@@ -8,7 +8,12 @@ output "gateway_ipv4" {
   description = "The IPv4 address of the gateway"
 }
 
-output "self_link" {
+output "network_self_link" {
   value       = "${google_compute_network.my_network.self_link}"
+  description = "The URL of the created resource"
+}
+
+output "subnetwork_self_link" {
+  value       = "${google_compute_subnetwork.my_subnetwork.self_link}"
   description = "The URL of the created resource"
 }
