@@ -1,6 +1,13 @@
+# Resource definition for network. Note: region will be defined by Provider configuration
 resource "google_compute_network" "my_network" {
   name                    = "${var.gcp_network_name}"
   auto_create_subnetworks = "${var.auto_create_subnetworks}"
   description             = "${var.description}"
-  ipv4_range 		  = "${var.ipv4_range}"
+}
+
+resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" {
+  name          = "gcp-subnetwork"
+  ip_cidr_range = "${var.ipv4_range}"
+  network       = "${google_compute_network.my_network.self_link}"
+  private_ip_google_access = "true"
 }
