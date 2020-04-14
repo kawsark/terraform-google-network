@@ -13,8 +13,3 @@ output "network_self_link" {
   description = "The URL of the created resource"
 }
 
-output "subnetwork_self_link" {
-  value       = google_compute_subnetwork.my_subnetwork.self_link
-  description = "The URL of the created resource"
-}
-

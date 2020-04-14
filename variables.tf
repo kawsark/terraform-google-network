@@ -9,12 +9,6 @@ variable "description" {
   default     = "GCP network provisioned by terraform"
 }
 
-variable "ipv4_range" {
-  type        = string
-  default     = "192.168.0.0/21"
-  description = "An IP V4 range"
-}
-
 variable "auto_create_subnetworks" {
   type        = string
   default     = "false"
